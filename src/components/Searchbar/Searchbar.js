@@ -4,18 +4,13 @@ import PropTypes from 'prop-types';
 
 export default function Searchbar({ onSubmit }) {
   const [query, setquery] = useState('');
-  const handleInput = event => {
-    setquery({ query: event.currentTarget.value });
-  };
+  const handleInput = event => setquery(event.currentTarget.value);
+
   const handleSubmit = event => {
     event.preventDefault();
-    console.log([query]);
-    // if (query.trim() === '') {
-    //   alert('This field cannot be empty, please enter a valid name');
-    //   return;
-    // }
+
     onSubmit(query);
-    setquery({ query: '' });
+    setquery('');
   };
 
   return (
