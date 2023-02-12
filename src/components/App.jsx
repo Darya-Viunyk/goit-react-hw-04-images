@@ -13,9 +13,9 @@ export default function App() {
   const [imeges, setImeges] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
   useEffect(() => {
-    const getFotos = async (query, page) => {
+    if (!query) return;
+    const getFotos = async () => {
       try {
         setIsLoading(true);
         setError(null);
