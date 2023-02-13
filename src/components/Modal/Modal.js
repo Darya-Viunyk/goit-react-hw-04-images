@@ -30,7 +30,9 @@ export default function Modal({ onClose, largeImageURL }) {
 
   return createPortal(
     <div className={style.modalBackdrop} onClick={onClikOverlay}>
-      <div className={style.modalContent}>{largeImageURL}</div>
+      <div className={style.modalContent}>
+        <img src={largeImageURL} alt="img" />
+      </div>
     </div>,
     modalRoot
   );
