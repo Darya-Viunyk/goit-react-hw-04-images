@@ -22,9 +22,7 @@ export default function ImageGalleryItem({ webformatURL, largeImageURL }) {
           className={styles.imageGalleryItemImage}
         />
         {isModalOpen && (
-          <Modal onClose={closeModal}>
-            <img src={largeImageURL} alt="img" onClick={openModal} />
-          </Modal>
+          <Modal onClose={closeModal} largeImageURL={largeImageURL}></Modal>
         )}
       </li>
     </>
