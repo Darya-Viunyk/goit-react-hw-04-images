@@ -10,8 +10,9 @@ export default function ImageGalleryItem({ webformatURL, largeImageURL }) {
     setIsModalOpen({ isModalOpen: true });
   };
   const closeModal = () => {
-    setIsModalOpen({ isModalOpen: false });
+    setIsModalOpen(prevState => !prevState);
   };
+
   return (
     <>
       <li className={styles.imageGalleryItem}>
